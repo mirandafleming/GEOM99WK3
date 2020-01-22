@@ -39,16 +39,13 @@
   <script>
     var map;
     function initMap() {
-      var OldHome = {lat: 45.398486, lng: -75.741389};
+
       map = new google.maps.Map(document.getElementById('map'), {
        center: {lat: 50.321463, lng: -85.397860},
         zoom: 6,
 	mapTypeId: 'hybrid'
       });
-     var script = document.createElement('script');
-	
-     script.src = 'abndnMinesON.geojson';
-     document.getElementsByTagName('head')[0].appendChild(script);
+      map.data.loadGeoJson('abndnMinesON.geojson');
     }
 	window.eqfeed_callback = function(results) {
         for (var i = 0; i < results.features.length; i++) {
