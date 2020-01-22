@@ -47,7 +47,7 @@
       });
       map.data.loadGeoJson('https://mirandafleming.github.io/GEOM99WK3/abndnMinesON.geojson');
       map.data.setStyle(function(feature){
-	      title: getProperty('Name','Commodity')
+	      title: feature.getProperty('Name','Commodity')
       });
     }
 
