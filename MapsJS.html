@@ -13,7 +13,7 @@
         height: 100%;
       }
 
-      html,body {
+      body {
         height: 100%;
         margin: 2%;
         padding: 0;
@@ -42,7 +42,7 @@
 
       map = new google.maps.Map(document.getElementById('map'), {
        center: {lat: 50.321463, lng: -85.397860},
-        zoom: 6,
+        zoom: 5,
 	mapTypeId: 'hybrid'
       });
       map.data.loadGeoJson('https://github.com/mirandafleming/GEOM99WK3/blob/master/abndnMinesON.geojson');
