@@ -42,11 +42,23 @@
       var OldHome = {lat: 45.398486, lng: -75.741389};
       map = new google.maps.Map(document.getElementById('map'), {
        center: {lat: 50.321463, lng: -85.397860},
-        zoom: 5,
+        zoom: 6,
 	mapTypeId: 'hybrid'
       });
-      var marker = new google.maps.Marker({position: OldHome, map: map});
+     var script = document.createElement('script');
+	
+     script.src = 'abndnMinesON.geojson';
+     document.getElementsByTagName('head')[0].appendChild(script);
     }
+	window.eqfeed_callback = function(results) {
+        for (var i = 0; i < results.features.length; i++) {
+          var coords = results.features[i].geometry.coordinates;
+          var latLng = new google.maps.LatLng(coords[1],coords[0]);
+          var marker = new google.maps.Marker({
+            position: latLng,
+            map: map
+          });
+        }
   </script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKRmTIZjSvQ8vXXFzC5xaJJYC0LZYssLU&callback=initMap"
           async defer></script>
