@@ -130,13 +130,22 @@
         zoom: 5,
 	mapTypeId: 'hybrid'
       });
-      map.data.loadGeoJson('https://mirandafleming.github.io/GEOM99WK3/abndnMinesON.geojson');
+      
+	// Marker clusterer formatting for geojson data from https://stackoverflow.com/questions/40904882/clustering-markers-from-geojson-using-google-maps
+	// user: Vadim Gremyachev
+     map.data.loadGeoJson('https://mirandafleming.github.io/GEOM99WK3/abndnMinesON.geojson', null, function (features){
+	        var markers = features.map(function (feature) {
+        var g = feature.getGeometry();
+        var marker = new google.maps.Marker({ 'position': g.get(0) });
+        return marker;
+       });
       map.data.setStyle({
 	      icon: 'https://mirandafleming.github.io/GEOM99WK3/MineIcon.png'
       });
-    var markerCluster = new MarkerClusterer(map, data,
+    var markerCluster = new MarkerClusterer(map, markers,
             {imagePath: 'https://mirandafleming.github.io/GEOM99WK3/MineIcon.png'});
     
+	      
     }
 
   </script>
