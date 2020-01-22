@@ -134,9 +134,14 @@
       map.data.setStyle({
 	      icon: 'https://mirandafleming.github.io/GEOM99WK3/MineIcon.png'
       });
+    var markerCluster = new MarkerClusterer(map, markers,
+            {imagePath: 'https://mirandafleming.github.io/GEOM99WK3/MineIcon.png'});
+    
     }
 
   </script>
+  <script src="https://mirandafleming.github.io/GEOM99WK3/markerclusterer.js">
+    </script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKRmTIZjSvQ8vXXFzC5xaJJYC0LZYssLU&callback=initMap"
           async defer></script>
 
