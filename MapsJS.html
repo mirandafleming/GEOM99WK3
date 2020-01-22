@@ -133,21 +133,21 @@
       
 	// Marker clusterer formatting for geojson data from https://stackoverflow.com/questions/40904882/clustering-markers-from-geojson-using-google-maps
 	// user: Vadim Gremyachev
-     map.data.loadGeoJson('https://mirandafleming.github.io/GEOM99WK3/abndnMinesON.geojson', null, function (features){
-        var g = feature.getGeometry();
-        var marker = new google.maps.Marker({ 'coordinates': g.get(0) });
+     map.data.loadGeoJson('https://mirandafleming.github.io/GEOM99WK3/abndnMinesON.geojson')/*, null, function (features)*/{
+        /*var g = feature.getGeometry();
+        var marker = new google.maps.Marker({ 'coordinates': g.get(0) });*/
       map.data.setStyle({
 	      icon: 'https://mirandafleming.github.io/GEOM99WK3/MineIcon.png'
       });
-    var markerCluster = new MarkerClusterer(map, markers,
+    /*var markerCluster = new MarkerClusterer(map, markers,
             {imagePath: 'https://mirandafleming.github.io/GEOM99WK3/MineIcon.png'});
     
 	      
-     }
+     }*/
   }
   </script>
-  <script src="https://mirandafleming.github.io/GEOM99WK3/markerclusterer.js">
-    </script>
+  <!-- <script src="https://mirandafleming.github.io/GEOM99WK3/markerclusterer.js">
+    </script> -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKRmTIZjSvQ8vXXFzC5xaJJYC0LZYssLU&callback=initMap"
           async defer></script>
 
